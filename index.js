@@ -6,7 +6,7 @@ const app = express()
 
 app.get('/authors', getAllAuthors)
 
-app.get('/authors/:id', getAuthorByIdWithNovelsAndGenres)
+app.get('/authors/:find', getAuthorByIdWithNovelsAndGenres)
 
 app.get('/genres', getAllGenres)
 
@@ -14,7 +14,7 @@ app.get('/genres/:id', getGenreByIdWithNovelsAndAuthor)
 
 app.get('/novels', getAllNovelsWithAuthorAndGenres)
 
-app.get('/novels/:id', getNovelByIdWithAuthorAndGenres)
+app.get('/novels/:find', getNovelByIdWithAuthorAndGenres)
 
 app.all('*', (request, response) => response.sendStatus(404))
 

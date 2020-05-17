@@ -1,9 +1,5 @@
 CREATE DATABASE novels;
 
-CREATE USER 'novels'@'localhost' IDENTIFIED WITH mysql_native_password BY 'n0v315';
-
-GRANT ALL ON novels.* TO 'novels'@'localhost';
-
 USE novels;
 
 CREATE TABLE authors (

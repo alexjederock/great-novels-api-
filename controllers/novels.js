@@ -12,10 +12,15 @@ const getAllNovelsWithAuthorAndGenres = async (request, response) => {
 }
 
 const getNovelByIdWithAuthorAndGenres = async (request, response) => {
-  const { id } = request.params
+  const { find } = request.params
 
   const novel = await models.Novels.findOne({
-    where: { id },
+    where: {
+      [models.Op.or]: [
+        { title: { [models.Op.like]: `%${find}%` } },
+        { id: find }
+      ]
+    },
     include: [{ model: models.Authors }, { model: models.Genres }]
   })
 

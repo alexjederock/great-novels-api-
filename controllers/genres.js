@@ -13,7 +13,7 @@ const getGenreByIdWithNovelsAndAuthor = async (request, response) => {
 
   const genre = await models.Genres.findOne({
     where: { id },
-    include: [{ model: models.Novels, includes: [{ model: models.Authors }] }]
+    include: [{ model: models.Novels, include: [{ model: models.Authors }] }]
   })
 
   return genre
