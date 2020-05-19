@@ -11,7 +11,7 @@ const getAllNovelsWithAuthorAndGenres = async (request, response) => {
     : response.sendStatus(404)
 }
 
-const getNovelByIdWithAuthorAndGenres = async (request, response) => {
+const getNovelByIdOrTitleWithAuthorAndGenres = async (request, response) => {
   const { find } = request.params
 
   const novel = await models.Novels.findOne({
@@ -30,4 +30,4 @@ const getNovelByIdWithAuthorAndGenres = async (request, response) => {
 }
 
 
-module.exports = { getAllNovelsWithAuthorAndGenres, getNovelByIdWithAuthorAndGenres }
+module.exports = { getAllNovelsWithAuthorAndGenres, getNovelByIdOrTitleWithAuthorAndGenres }
